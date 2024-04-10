@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  flag_url: 'https://www.currencyremitapp.com/wp-content/themes/currencyremitapp/images/countryimages',
+  api_key: '8b76154b4cmsheb35bc4ae29f448p1e50fdjsndc2192a21d4a',
+  api_host: 'currency-converter-by-api-ninjas.p.rapidapi.com',
+  api_url: 'https://currency-converter-by-api-ninjas.p.rapidapi.com/v1/convertcurrency',
+  back_url: 'http://192.168.0.100:8008/api'
 };
 
 /*

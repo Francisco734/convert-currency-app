@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+    <h1>Historial de Conversiones</h1>
+    <br>
+    <app-loading *ngIf="loading"></app-loading>
+    <div class="animated fadeIn" *ngIf="error">
+        <div class="alert alert-danger" role="alert">
+            {{error_msj}}
+        </div>
+    </div>
+    <div class="row animated fadeIn" *ngIf="!loading">
+        <div class="col col-md-4" *ngFor="let history of histories">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h3>{{history[0].symbol_origin}} {{history[0].amount_origin | number:'1.2-5'}} <br> <img class="flg-img"
+                            [src]="flag_url + history[0].flag_origin" alt="">
+                        <b>
+                            {{history[0].acronym_origin}} -
+                            {{history[0].description_origin}}</b> <br> equals to:
+                    </h3>
+                    <br>
+                    <div class="pc-cont mt-3" *ngFor="let item of history">
+                        <div class="">
+                            <img class="flg-img" [src]="flag_url + item.flag_final" alt="">
+                            {{item.symbol_final}} {{item.amount_final}} <b>{{item.description_final}}</b> {{item.currency_final}}
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
